@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{890B3A58-9DAB-4D7A-A820-B12C0733F3D7}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ImageManipulation</RootNamespace>
+    <AssemblyName>ImageManipulation</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+    <StartAction>Project</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ColorData.cs" />
+    <Compile Include="ColorDataBox.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="ImageAlgorithms\ErrorDiffusionAlgorithm.cs" />
+    <Compile Include="ImageAlgorithms\GrayscaleAlgorithm.cs" />
+    <Compile Include="ImageAlgorithms\MedianCutAlgorithm.cs" />
+    <Compile Include="ImageAlgorithms\UniformPartitionAlgorithm.cs" />
+    <Compile Include="ImageData.cs" />
+    <Compile Include="ImageFlipper.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImageFlipper.Designer.cs">
+      <DependentUpon>ImageFlipper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageUtilities.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IPartControl.cs" />
+    <Compile Include="PartFiveControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PartFiveControl.Designer.cs">
+      <DependentUpon>PartFiveControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PartFourControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PartFourControl.Designer.cs">
+      <DependentUpon>PartFourControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PartOneControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PartOneControl.Designer.cs">
+      <DependentUpon>PartOneControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PartThreeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PartThreeControl.Designer.cs">
+      <DependentUpon>PartThreeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PartTwoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PartTwoControl.Designer.cs">
+      <DependentUpon>PartTwoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ImageFlipper.resx">
+      <DependentUpon>ImageFlipper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PartFiveControl.resx">
+      <DependentUpon>PartFiveControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PartFourControl.resx">
+      <DependentUpon>PartFourControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PartOneControl.resx">
+      <DependentUpon>PartOneControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PartThreeControl.resx">
+      <DependentUpon>PartThreeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PartTwoControl.resx">
+      <DependentUpon>PartTwoControl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
